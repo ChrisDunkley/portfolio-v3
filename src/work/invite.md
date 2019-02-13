@@ -2,7 +2,7 @@
 title: Wedding invite
 permalink: work/wedding-invite/
 categories: project
-layout: project
+posttype: work
 author: Chris Dunkley
 date: 2018-11-28
 icon: invite.jpg

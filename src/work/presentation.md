@@ -2,7 +2,7 @@
 title: Presentation - Diagrams & Icons
 permalink: work/presentation/
 categories: project
-layout: project
+posttype: work
 author: Chris Dunkley
 date: 2018-11-27
 icon: presentation.jpg

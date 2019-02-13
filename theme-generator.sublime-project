@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.zip",
+				"*.sublime-project",
+				"package.json",
+				"package-lock.json",
+				"yarn.lock"
+			],
+			"folder_exclude_patterns":
+			[
+				"public",
+				"node_modules",
+				".*"
+			],
+			"path": "/"
+		}
+	],
+	"settings":
+	{
+		"tab_size": 4
+	}
+}

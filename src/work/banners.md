@@ -2,9 +2,9 @@
 title: Banner Collection - Education
 permalink: work/banners/
 categories: project
-layout: project
+posttype: work
 author: Chris Dunkley
-date: 2018-11-29 21:56:41
+date: 2018-11-29
 icon: banners.jpg
 images:
 - banners/layout_banner_04_extra.png
