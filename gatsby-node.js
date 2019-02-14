@@ -35,7 +35,8 @@ exports.createPages = ({ graphql, actions }) => {
 		}
 	`).then(result => {
 		result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-			if (node.frontmatter.posttype === 'work') {
+
+			if(node.fields.slug.indexOf("/work/") != -1){
 				createPage({
 					path: node.fields.slug,
 					component: workPost,
