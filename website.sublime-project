@@ -6,7 +6,8 @@
 			[
 				"*.zip",
 				"README.md",
-				"*.sublime-project"
+				"*.sublime-project",
+				".*"
 			],
 			"folder_exclude_patterns":
 			[

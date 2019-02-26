@@ -1,0 +1,39 @@
+.album {
+	display: flex;
+	align-items: center;
+	margin: 0 auto 12px auto;
+}
+
+.album:last-child {
+	margin-bottom: 0;
+}
+
+.cover {
+	flex: 0 0 200px;
+	width: 200px;
+	height: 200px;
+	margin: 0;
+}
+
+.information {
+	flex: 1;
+	margin-left: 18px;
+	padding: 12px;
+}
+
+.artist {
+	margin: 0 0 12px 0;
+	padding: 0;
+	color: blue;
+	font-weight: normal;
+	font-family: sans-serif;
+}
+
+.title {
+	color: red;
+
+}
+
+.comments {
+	margin: 0;
+}

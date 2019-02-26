@@ -5,7 +5,7 @@ categories: project
 posttype: work
 author: Chris Dunkley
 date: 2018-11-28
-icon: invite.jpg
+icon: portrait.jpg
 images:
 - wedding-invite/layout_invite_01.jpg
 - wedding-invite/layout_invite_04.gif
