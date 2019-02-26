@@ -5,13 +5,19 @@ categories: project
 posttype: work
 author: Chris Dunkley
 date: 2018-11-29
-icon: banners.jpg
-images:
-- banners/layout_banner_04_extra.png
-- banners/layout_banner_02.png
-- banners/layout_banner_03.png
-- banners/layout_banner_05.png
+image: "../images/banners/layout_banner_04_extra.png"
 ---
+
+
+<img src="../images/banners/layout_banner_04_extra.png" alt="blah" title="Hello"/>
+
+
+
+![alt text](../images/banners/layout_banner_02.png "Logo Title Text 1")
+
+![alt text](../images/banners/layout_banner_03.png "Logo Title Text 1")
+
+![alt text](../images/banners/layout_banner_05.png "Logo Title Text 1")
 
 A series of banners created for blog posts about educational software.
 

@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import Image from '../components/image'
 import SEO from '../components/seo'
 
-import icon from "./../images/portrait.jpg"
+
 
 export const query = graphql`
 	query {
@@ -20,7 +20,7 @@ export const query = graphql`
 						title
 						date(formatString: "DD MMMM, YYYY")
 						author
-						icon
+						image
 					}
 					fields {
 						slug
@@ -44,7 +44,8 @@ const Page = ({ data }) => (
 				<h4>{data.allMarkdownRemark.totalCount} Posts</h4>
 				{data.allMarkdownRemark.edges.map(({ node }) => (
 					<div key={node.id}>
-						<img src={icon} />
+
+						<img src={node.frontmatter.image} />
 						<Link to={node.fields.slug} >
 						<h3>
 							{node.frontmatter.title}{" "}

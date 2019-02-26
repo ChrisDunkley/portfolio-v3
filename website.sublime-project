@@ -7,7 +7,9 @@
 				"*.zip",
 				"README.md",
 				"*.sublime-project",
-				".*"
+				".*",
+				"yarn.lock",
+				"package-lock.json"
 			],
 			"folder_exclude_patterns":
 			[

@@ -5,8 +5,8 @@ categories: project
 posttype: work
 author: Chris Dunkley
 date: 2018-11-27
-icon: presentation.jpg
-images:
+image: "../images/banners/layout_banner_04_extra.png"
+attachments:
 - presentation/Lay_Pres_01.jpg
 - presentation/Lay_Pres_02.jpg
 - presentation/Lay_Pres_03.jpg
