@@ -1,11 +1,12 @@
 import React from 'react'
 
+import Img from 'gatsby-image'
+import { Link, graphql } from "gatsby"
+
 import Layout from '../components/layout'
 import Container from "../components/container"
 
-import styles from "../styles/music.module.css"
-
-import Img from 'gatsby-image'
+import styles from "./music.module.css"
 
 
 const Album = props => (
@@ -23,8 +24,7 @@ const Album = props => (
 const Page = (props) => (
 
 	<Layout>
-		<Img fluid={props.data.headerImage.childImageSharp.fluid} />
-
+		
 		<Container>
 
 			<h1>Music for my brother</h1>

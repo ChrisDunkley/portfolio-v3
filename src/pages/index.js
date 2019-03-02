@@ -4,10 +4,38 @@ import React from 'react'
 import { Link, graphql } from "gatsby"
 
 import Layout from '../components/layout'
-import Image from '../components/image'
 import SEO from '../components/seo'
 
+import Img from 'gatsby-image'
 
+import css from "./index.module.css"
+ 
+const Page = ({ data }) => (
+	<Layout>
+		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+
+		{/* <h4>{data.allMarkdownRemark.totalCount} Posts</h4> */}
+		
+		<div className={css.wrapper}>
+			
+			{data.allMarkdownRemark.edges.map(({ node }) => (
+				<div className={css.item} key={node.id}>
+
+					<Link to={node.fields.slug} >
+
+						<Img fluid={node.frontmatter.thumb.childImageSharp.fluid} />
+
+						<h3 className={css.header}>{node.frontmatter.title}</h3>
+					</Link>
+					
+				</div>
+			))}
+		</div>
+
+	</Layout>
+)
+
+export default Page
 
 export const query = graphql`
 	query {
@@ -20,7 +48,13 @@ export const query = graphql`
 						title
 						date(formatString: "DD MMMM, YYYY")
 						author
-						image
+						thumb {
+						  childImageSharp {
+						    fluid {
+						      ...GatsbyImageSharpFluid
+						    }
+						  }
+						}
 					}
 					fields {
 						slug
@@ -31,41 +65,3 @@ export const query = graphql`
 		}
 	}
 `
- 
-const Page = ({ data }) => (
-	<Layout>
-		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-
-		<div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-			<Image />
-		</div>
-
-		<div>
-				<h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-				{data.allMarkdownRemark.edges.map(({ node }) => (
-					<div key={node.id}>
-
-						<img src={node.frontmatter.image} />
-						<Link to={node.fields.slug} >
-						<h3>
-							{node.frontmatter.title}{" "}
-							<span>
-								— {node.frontmatter.date}
-							</span>
-						</h3>
-						</Link>
-
-						{node.frontmatter.author && <p>Written by {node.frontmatter.author}</p>}
-
-					
-
-						<p>{node.excerpt}</p>
-						
-					</div>
-				))}
-			</div>
-
-	</Layout>
-)
-
-export default Page

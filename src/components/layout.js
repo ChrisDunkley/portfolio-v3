@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Footer from './footer'
+
+import { Helmet } from "react-helmet"
 
 
 const Layout = ({ children }) => (
@@ -18,13 +21,13 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <Helmet>
+          <link rel="stylesheet" href="https://use.typekit.net/wcv6jiz.css" />
+        </Helmet>
+
         <Header siteTitle={data.site.siteMetadata.title} />
-        {children}
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <article><div class="wrapper">{children}</div></article>
+        <Footer />
       </>
     )}
   />

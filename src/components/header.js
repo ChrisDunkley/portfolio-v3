@@ -2,27 +2,23 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const ListLink = props => (
-	<li style={{ display: 'inline-block', marginRight: '1rem' }}>
-		<Link to={props.to}>{props.children}</Link>
-	</li>
-)
+import logo from '../images/logo.svg'
 
 const Header = ({ siteTitle }) => (
-	<div>
-	<h1>
-		<Link to="/">
-			{siteTitle}
-		</Link>
-	</h1>
-	<ul style={{
-			display: 'inline-block'
-		}}>
-		<ListLink to="/">Work</ListLink>
-		<ListLink to="/about/">About</ListLink>
-		<ListLink to="/contact/">Contact</ListLink>
-	</ul>
-	</div>
+	<header>
+
+		<div class="wrapper">
+			<Link className='logo' to="/"><img src={logo} /></Link>
+
+			<ul class="nav">
+				<li><Link className="mobile-hide" to="/"><h1>{siteTitle}</h1></Link></li>
+				<li><Link to="/">Work</Link></li>
+				<li><Link to="/info/">Info</Link></li>
+				<li><Link to="/contact/">Contact</Link></li>
+			</ul>
+		</div>
+
+	</header>
 )
 
 Header.propTypes = {

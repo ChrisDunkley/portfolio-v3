@@ -1,38 +1,37 @@
 import React from 'react'
 
+import { Link } from 'gatsby'
+
 import Layout from '../components/layout'
 
 import Container from "../components/container"
 
-import styles from "../styles/contact.module.css"
+import css from "./contact.module.scss"
 
-
-const User = props => (
-  <div className={styles.user}>
-    <img src={props.avatar} className={styles.avatar} alt="" />
-    <div className={styles.description}>
-      <h2 className={styles.username}>{props.username}</h2>
-      <p className={styles.excerpt}>{props.excerpt}</p>
-    </div>
-  </div>
-)
 
 
 export default () => (
-  <Layout>
-    <Container>
-      <h1>About CSS Modules</h1>
-      <p>CSS Modules are cool</p>
-      <User
-        username="Jane Doe"
-        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
-        excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      />
-      <User
-        username="Bob Smith"
-        avatar="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
-        excerpt="I'm Bob Smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-      />
-    </Container>
-  </Layout>
+	<Layout>
+
+		<div className={css.info}>
+			<div className={css.description}>
+
+				<h2>If you're interested in any of my work</h2>
+				<p>or have questions about potential projects, collaborations or anything else please get in touch.</p>
+
+			</div>
+				
+
+			<div className={css.description}>
+				<h2>You can email me at -</h2>
+				<p><Link to="mailto:contact@chrisdunkley.net">contact at chris dunkley dot net</Link></p>
+
+				<h2>Or contact me online at -</h2>
+				<p>
+					<Link to="https://instagram.com/chrisdunkley">Instagram</Link>, <Link to="https://behance.net/ChrisDunkley">Behance</Link>, <Link to="https://www.linkedin.com/in/chrisjdunkley/">Linkedin</Link>
+				</p>
+			</div>
+		</div>
+
+	</Layout>
 )

@@ -14,8 +14,7 @@
 			"folder_exclude_patterns":
 			[
 				"public",
-				"node_modules",
-				".*"
+				"node_modules"
 			],
 			"path": "/"
 		}

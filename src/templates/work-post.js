@@ -2,15 +2,32 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
+import Img from 'gatsby-image'
+
+import css from './work-post.module.scss'
+
+
 export default ({ data }) => {
 	const post = data.markdownRemark
 	return (
 		<Layout>
-			<div>
-				<h1>THIS IS A WORK POST</h1>
-				<h1>{post.frontmatter.title}</h1>
-				<div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+			{post.frontmatter.images.map(({ childImageSharp }) => (
+				<div>
+
+						<Img className={css.heroImage} fluid={childImageSharp.fluid} />
+
+				</div>
+			))}
+
+			<div className={css.info}>
+
+				<h2 className={css.title}>{post.frontmatter.title}</h2>
+
+				<div className={css.description} dangerouslySetInnerHTML={{ __html: post.html }} />
+
 			</div>
+
 		</Layout>
 	)
 }
@@ -21,7 +38,13 @@ export const query = graphql`
 			html
 			frontmatter {
 				title
-				attachments
+				images {
+					childImageSharp {
+						fluid {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
 			}
 		}
 	}

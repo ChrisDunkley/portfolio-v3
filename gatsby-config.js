@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Chris Dunkley`,
-    description: `Designer and Person`,
+    description: `Portfolio of Chris Dunkley, graphic and multimedia designer`,
     author: `@chrisdunkley`,
   },
   plugins: [
@@ -13,9 +13,9 @@ module.exports = {
         path: `${__dirname}/src`,
       },
     },
-    `gatsby-plugin-postcss`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -39,7 +39,7 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#fff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
