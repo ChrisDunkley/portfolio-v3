@@ -23,9 +23,6 @@ exports.createPages = ({ graphql, actions }) => {
 			allMarkdownRemark {
 				edges {
 					node {
-						frontmatter {
-							posttype
-						}
 						fields {
 							slug
 						}

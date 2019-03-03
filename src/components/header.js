@@ -9,7 +9,7 @@ import css from './header.module.scss'
 const Header = ({ siteTitle }) => (
 	<header>
 		<div className={css.wrapper}>
-			<Link className={css.logo} to="/"><img src={logo} /></Link>
+			<Link className={css.logo} to="/"><img alt="Chris Dunkley Logo" src={logo} /></Link>
 
 			<ul className={css.nav}>
 				<li><Link to="/"><h1>{siteTitle}</h1></Link></li>

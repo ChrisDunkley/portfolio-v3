@@ -34,7 +34,7 @@ const Page = () => (
 			</div>
 
 			<div className={css.portrait}>
-				<img src={portrait} />
+				<img alt="Portrait" src={portrait} />
 			</div>
 		</div>
 

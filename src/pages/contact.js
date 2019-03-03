@@ -4,8 +4,6 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 
-import Container from "../components/container"
-
 import css from "./contact.module.scss"
 
 
