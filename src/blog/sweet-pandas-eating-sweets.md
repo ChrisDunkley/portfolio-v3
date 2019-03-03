@@ -1,7 +1,6 @@
 ---
 title: "Sweet Pandas Eating Sweets"
 date: 2018-11-26
-thumb: "../images/gatsby-icon.png"
 ---
 
 Pandas are really sweet.

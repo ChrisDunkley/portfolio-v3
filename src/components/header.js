@@ -4,14 +4,15 @@ import React from 'react'
 
 import logo from '../images/logo.svg'
 
+import css from './header.module.scss'
+
 const Header = ({ siteTitle }) => (
 	<header>
+		<div className={css.wrapper}>
+			<Link className={css.logo} to="/"><img src={logo} /></Link>
 
-		<div class="wrapper">
-			<Link className='logo' to="/"><img src={logo} /></Link>
-
-			<ul class="nav">
-				<li><Link className="mobile-hide" to="/"><h1>{siteTitle}</h1></Link></li>
+			<ul className={css.nav}>
+				<li><Link to="/"><h1>{siteTitle}</h1></Link></li>
 				<li><Link to="/">Work</Link></li>
 				<li><Link to="/info/">Info</Link></li>
 				<li><Link to="/contact/">Contact</Link></li>

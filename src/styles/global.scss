@@ -1,16 +1,16 @@
 @import 'variables';
 
+* {
+	box-sizing: border-box;
+}
+
 html {
 	background-color: $bg-color;
 }
 
 body {
 	margin: 0;
-}
-
-.wrapper {
-	max-width: 1080px;
-	margin: 0 auto;
+	min-height: 100vh;
 }
 
 a:link, a:visited {
@@ -39,6 +39,10 @@ p.space {
 	margin-top: 1em;
 }
 
+header {
+	border-bottom: 1px solid $rule-color;
+}
+
 footer {
 	text-align: center;
 	font-size: 0.8em;
@@ -49,29 +53,9 @@ footer {
 	border-top: 1px solid $rule-color;
 }
 
-.mobile-hide {
-	display: none !important;
-}
-
-@media only screen and (min-width: $screen-small) {
-	.mobile-hide {
-		display: inherit !important;
-	}
-}
-
-@media only screen and (min-width: $screen-medium) {
-
-}
-
-
-@import 'header';
-
-
 .wrapper {
-	box-sizing: border-box;
 	width: 100%;
 	max-width: $max-width;
-	padding: 2%;
 	margin: 0 auto;
 }
 
@@ -80,8 +64,9 @@ a.big-button {
 	padding: 0.8em 1em;
 	border-radius: 5px;
 	color: $bg-color;
-	box-sizing: border-box;
 	display:inline-block;
+	width: 100%;
+	text-align: center;
 
 	&:visited {
 		color: $bg-color;
@@ -93,3 +78,11 @@ a.big-button {
 	}
 }
 
+@media only screen and (min-width: $screen-small) {
+
+	a.big-button {
+		width: auto;
+		text-align: left;
+	}
+
+}

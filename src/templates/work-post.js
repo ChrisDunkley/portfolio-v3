@@ -12,20 +12,22 @@ export default ({ data }) => {
 	return (
 		<Layout>
 
-			{post.frontmatter.images.map(({ childImageSharp }) => (
-				<div>
+			<div className={css.wrapper}>
 
+				{post.frontmatter.images.map(({ childImageSharp }) => (
+					<div>
 						<Img className={css.heroImage} fluid={childImageSharp.fluid} />
+					</div>
+				))}
+
+				<div className={css.info}>
+
+					<h2 className={css.title}>{post.frontmatter.title}</h2>
+
+					<div className={css.description} dangerouslySetInnerHTML={{ __html: post.html }} />
 
 				</div>
-			))}
-
-			<div className={css.info}>
-
-				<h2 className={css.title}>{post.frontmatter.title}</h2>
-
-				<div className={css.description} dangerouslySetInnerHTML={{ __html: post.html }} />
-
+				
 			</div>
 
 		</Layout>

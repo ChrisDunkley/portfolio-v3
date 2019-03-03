@@ -6,7 +6,7 @@ import { Link, graphql } from "gatsby"
 import Layout from '../components/layout'
 import Container from "../components/container"
 
-import styles from "./music.module.css"
+import styles from "./music.module.scss"
 
 
 const Album = props => (

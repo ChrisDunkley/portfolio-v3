@@ -1,7 +1,5 @@
 ---
 title: Banner Collection - Education
-permalink: work/banners/
-categories: project
 author: Chris Dunkley
 date: 2018-11-29
 thumb: "images/banners/thumb.jpg"

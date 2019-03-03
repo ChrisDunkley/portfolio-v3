@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 
 import Img from 'gatsby-image'
 
-import css from "./index.module.css"
+import css from "./index.module.scss"
  
 const Page = ({ data }) => (
 	<Layout>
@@ -25,7 +25,7 @@ const Page = ({ data }) => (
 
 						<Img fluid={node.frontmatter.thumb.childImageSharp.fluid} />
 
-						<h3 className={css.header}>{node.frontmatter.title}</h3>
+						<h3 className={css.title}>{node.frontmatter.title}</h3>
 					</Link>
 					
 				</div>
@@ -39,7 +39,10 @@ export default Page
 
 export const query = graphql`
 	query {
-		allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+		allMarkdownRemark(
+			filter: { fields:  { slug: { regex:"/work/"}}},
+			sort: { fields: [frontmatter___date], order: DESC }
+			) {
 			totalCount
 			edges {
 				node {

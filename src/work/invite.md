@@ -1,7 +1,5 @@
 ---
 title: Wedding invite
-permalink: work/wedding-invite/
-posttype: work
 author: Chris Dunkley
 date: 2018-11-28
 thumb: "images/wedding-invite/thumb.jpg"

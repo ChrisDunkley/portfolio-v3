@@ -22,7 +22,7 @@ export default () => (
 			</div>
 				
 
-			<div className={css.description}>
+			<div className={css.further}>
 				<h2>You can email me at -</h2>
 				<p><Link to="mailto:contact@chrisdunkley.net">contact at chris dunkley dot net</Link></p>
 

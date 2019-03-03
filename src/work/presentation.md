@@ -1,8 +1,5 @@
 ---
 title: Presentation - Diagrams & Icons
-permalink: work/presentation/
-categories: project
-posttype: work
 author: Chris Dunkley
 date: 2018-11-27
 thumb: "images/presentation/thumb.jpg"

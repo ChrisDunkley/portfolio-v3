@@ -1,0 +1,83 @@
+@import '../styles/variables';
+
+
+.wrapper {
+	display: flex;
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: $default-padding;
+}
+
+.logo {
+	max-width: 100px;
+	flex: 0 0 100px;
+	align-items: baseline;
+	align-content: flex-end;
+	text-align: right;
+	justify-content: flex-end;
+
+	img {
+		max-width: 100px;
+	}
+}
+
+.nav {
+	flex: 1 1 400px;
+	text-align: right;
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	flex-direction: column;
+	
+	justify-content: flex-end;
+	align-items: flex-end;
+
+	li {
+		display: inline-block;
+		margin-left: 0;
+
+			a:link, 
+			a:visited {
+				color: $menu-color;
+				text-decoration: none;
+				display:block;
+			}
+
+			a:hover {
+				color: $menu-hover;
+				text-decoration: underline;
+			}
+	}
+
+}
+
+
+@media only screen and (min-width: $screen-small) {
+	h1 {
+		font-size: 130%;
+	}
+
+	.nav {
+
+		li {
+			margin-left: 1.5em;
+		}
+	}
+}
+
+@media only screen and (min-width: $screen-medium) {
+
+	h1 {
+		font-size: 140%;
+	}
+
+	.nav {
+		margin-top: 1em;
+		flex-direction: row;
+		align-items: baseline;
+
+		
+	}
+	
+}
