@@ -1,18 +1,18 @@
 @import '../styles/variables';
 
 .wrapper {
-	padding: 1.5em;
+	padding: 0;
 }
 
 .heroImage {
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 }
 
 .info {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 0;
-	margin-bottom: 0em;
+	margin: 0;
+	padding: 0 1.5em;
 	width: 100%;
 }
 
@@ -29,8 +29,17 @@
 
 @media only screen and (min-width: $screen-small) {
 
+	.heroImage {
+		margin-bottom: 2em;
+	}
+
+	.wrapper {
+		padding: 1.5em;
+	}
+
 	.info {
 		margin-top: 1em;
+		padding: 0;
 	}
 
 	.title {

@@ -18,14 +18,18 @@
 	}
 
 	a:hover {
-		background-color: #80b3e6;
+		background-color: black;
+		color: $bg-color;
+
+		.title {
+			color: $bg-color;
+		}
 
 		picture {
 			opacity: 0.8;
 		}
 	}
 }
-
 
 @media only screen and (min-width: $screen-small) {
 
@@ -41,11 +45,15 @@
 
 }
 
-
 .title {
-	color: $link-color;
+	color: grey;
 	font-weight: normal;
 	margin: 0;
-	padding: 0.5em 0;
-	font-size: 100%;
+	padding: 0.5em;
+	font-size: 90%;
+	color: grey;
+
+	&:hover {
+		color: $bg-color;
+	}
 }

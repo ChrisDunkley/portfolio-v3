@@ -12,10 +12,10 @@ const Header = ({ siteTitle }) => (
 			<Link className={css.logo} to="/"><img alt="Chris Dunkley Logo" src={logo} /></Link>
 
 			<ul className={css.nav}>
-				<li><Link to="/"><h1>{siteTitle}</h1></Link></li>
-				<li><Link to="/">Work</Link></li>
-				<li><Link to="/info/">Info</Link></li>
-				<li><Link to="/contact/">Contact</Link></li>
+				<li key="logo"><Link to="/"><h1>{siteTitle}</h1></Link></li>
+				<li key="work"><Link to="/">Work</Link></li>
+				<li key="info"><Link to="/info/">Info</Link></li>
+				<li key="contact"><Link to="/contact/">Contact</Link></li>
 			</ul>
 		</div>
 

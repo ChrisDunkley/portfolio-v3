@@ -1,11 +1,8 @@
 import React from 'react'
 
-import { Link } from 'gatsby'
-
 import Layout from '../components/layout'
 
 import css from "./contact.module.scss"
-
 
 
 export default () => (
@@ -22,11 +19,11 @@ export default () => (
 
 			<div className={css.further}>
 				<h2>You can email me at -</h2>
-				<p><Link to="mailto:contact@chrisdunkley.net">contact at chris dunkley dot net</Link></p>
+				<p><a href="mailto:contact@chrisdunkley.net">contact at chris dunkley dot net</a></p>
 
 				<h2>Or contact me online at -</h2>
 				<p>
-					<Link to="https://instagram.com/chrisdunkley">Instagram</Link>, <Link to="https://behance.net/ChrisDunkley">Behance</Link>, <Link to="https://www.linkedin.com/in/chrisjdunkley/">Linkedin</Link>
+					<a href="https://instagram.com/chrisdunkley">Instagram</a>, <a href="https://behance.net/ChrisDunkley">Behance</a>, <a href="https://www.linkedin.com/in/chrisjdunkley/">Linkedin</a>
 				</p>
 			</div>
 		</div>

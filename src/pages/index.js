@@ -1,20 +1,17 @@
 import React from 'react'
-// import { Link } from 'gatsby'
 
-import { Link, graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 import Img from 'gatsby-image'
 
-import css from "./index.module.scss"
+import css from './index.module.scss'
  
-const Page = ({ data }) => (
+const Index = ({ data }) => (
 	<Layout>
 		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-
-		{/* <h4>{data.allMarkdownRemark.totalCount} Posts</h4> */}
 		
 		<div className={css.wrapper}>
 			
@@ -35,7 +32,7 @@ const Page = ({ data }) => (
 	</Layout>
 )
 
-export default Page
+export default Index
 
 export const query = graphql`
 	query {
@@ -53,7 +50,7 @@ export const query = graphql`
 						author
 						thumb {
 						  childImageSharp {
-						    fluid {
+						    fluid(maxWidth: 800) {
 						      ...GatsbyImageSharpFluid
 						    }
 						  }
@@ -62,7 +59,6 @@ export const query = graphql`
 					fields {
 						slug
 					}
-					excerpt
 				}
 			}
 		}

@@ -1,3 +1,5 @@
+@import '../styles/variables';
+
 .info {
 	display: flex;
 	width: 100%;
@@ -12,7 +14,6 @@
 .portrait {
 	margin-top: 2em;
 	flex: 0 1 100%;
-	text-align: center;
 
 	img {
 		margin: 0 auto;
@@ -23,17 +24,16 @@
 	}
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: $screen-small) {
 
 	.description {
-		flex: 0 1 55%;
-		padding-right: 3em;
+		flex: 0 1 70%;
+		padding-right: 5em;
 	}
 
 	.portrait {
 		margin-top: 0;
-		flex: 0 1 45%;
-		text-align: left;
+		flex: 0 1 30%;
 	}
 
 }

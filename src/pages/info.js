@@ -15,7 +15,7 @@ const Page = () => (
 
 		<div className={css.info}>
 			<div className={css.description}>
-				<h1>For over ten years I’ve endeavoured to create (and surround myself with) excellent and thoughtful design.</h1>
+				<h2>For over ten years I’ve endeavoured to create (and surround myself with) excellent and thoughtful design.</h2>
 
 				<p>This journey has lead me through game design, web development, video production, print and graphic design and (I hope!) made me a more well-rounded designer. Right now I’m focused on graphic design and illustration, but am interested in hearing about projects of any kind or scale.</p>
 

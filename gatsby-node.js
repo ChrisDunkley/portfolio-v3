@@ -44,7 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
 					},
 			})
 			}
-			else {
+			else if(node.fields.slug.indexOf("/blog/") != -1) {
 				createPage({
 					path: node.fields.slug,
 					component: blogPost,

@@ -1,61 +1,73 @@
 import React from 'react'
 
-import { graphql } from "gatsby"
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-import Container from "../components/container"
+import SEO from '../components/seo'
 
-import styles from "./music.module.scss"
+import Img from 'gatsby-image'
 
-
-const Album = props => (
-	<div className={styles.album}>
-		<img src={props.cover} className={styles.cover} alt="" />
-		<div className={styles.information}>
-			<h2 className={styles.artist}>{props.artist}</h2>
-			<h2 className={styles.title}>{props.title}</h2>
-			<p className={styles.comments}>{props.comments}</p>
-		</div>
-	</div>
-)
-
-
-const Page = (props) => (
-
+import css from './music.module.scss'
+ 
+const Index = ({ data }) => (
 	<Layout>
+		<SEO title="Music Recommendations" keywords={[`gatsby`, `application`, `react`]} />
 		
-		<Container>
+		<div className={css.wrapper}>
 
-			<h1>Music for my brother</h1>
-			<Album
-				artist="Jane Doe"
-				title="The End of Silences"
-				cover="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"
-				comments="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-			/>
-			<Album
-				artist="Bob Smith"
-				title="Skee Mask"
-				cover="https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg"
-				comments="I'm Bob Smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-			/>
-		</Container>
+			<h2 className={css.pageTitle}>Music Recommendations</h2>
+			
+			{data.allMarkdownRemark.edges.map(({ node }) => (
+				<div className={css.album} key={node.id}>
+
+					<Img fluid={node.frontmatter.cover.childImageSharp.fluid} className={css.cover}/>
+
+					<div className={css.information}>
+
+						<h3 className={css.artist}>{node.frontmatter.artist}</h3>
+						<h3 className={css.title}>{node.frontmatter.title}</h3>
+
+						<div className={css.comments} dangerouslySetInnerHTML={{ __html: node.html }} />
+
+						<p className={css.date}>{node.frontmatter.date}</p>
+
+					</div>
+					
+				</div>
+			))}
+		</div>
+
 	</Layout>
-
 )
 
-export default Page
+export default Index
 
-
-
-
-
-export const pageQuery = graphql`
+export const query = graphql`
 	query {
-		headerImage: file(relativePath: { eq: "images/portrait.jpg" }) {
-			childImageSharp {
-				fluid(maxWidth: 300) {
-					...GatsbyImageSharpFluid
+		allMarkdownRemark(
+			filter: { fields:  { slug: { regex:"/music/"}}},
+			sort: { fields: [frontmatter___date], order: DESC }
+			) {
+			totalCount
+			edges {
+				node {
+					id
+					html
+					frontmatter {
+						date(formatString: "D MMMM YY")
+						title
+						artist
+						cover {
+						  childImageSharp {
+						    fluid(maxWidth: 400, maxHeight: 400) {
+						      ...GatsbyImageSharpFluid
+						    }
+						  }
+						}
+					}
+					fields {
+						slug
+					}
 				}
 			}
 		}
