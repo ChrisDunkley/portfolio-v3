@@ -16,7 +16,7 @@
 				"public",
 				"node_modules",
 			],
-			"path": "/"
+			"path": "./"
 		}
 	],
 	"settings":
