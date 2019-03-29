@@ -1,4 +1,4 @@
-#Chris Dunkley Portfolio site (Gatsby version)
+# Chris Dunkley Portfolio site (Gatsby version)
 
 My portfolio website, rebuilt with Gatsby.
 
