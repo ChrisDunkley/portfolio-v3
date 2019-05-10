@@ -1,15 +1,13 @@
 ---
-artist: "Robert Farrugia"
-title: "Adrift"
-cover: "images/farrugia-adrift.jpg"
-date: 2018-12-01
+artist: Robert Farrugia
+title: Adrift
+cover: images/farrugia-adrift.jpg
+date: 2018-12-01T00:00:00.000Z
 ---
-
 More albums to add:
 
 Malibu Ken (Aesop Rock + Tobacco)
 Malibu Ken
-
 
 Blanck Mass
 World Eater (or Dumb Flesh)
@@ -19,9 +17,6 @@ In a Beautiful Place Out In the Country
 
 Boy Genius
 Boy Genius EP
-
-Cannibal Ox
-The Cold Vein
 
 DARKSIDE
 Psychic
@@ -79,7 +74,3 @@ Whack World
 
 Various
 Even a Tree Can Shed Tears
-
-YOB
-Clearing the Path to Ascend
-
