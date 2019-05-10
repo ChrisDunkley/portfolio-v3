@@ -2,8 +2,6 @@ backend:
   name: github
   repo: ChrisDunkley/portfolio-v3
 
-publish_mode: editorial_workflow
-
 media_folder: static/assets
 public_folder: assets
 
@@ -12,6 +10,7 @@ collections:
     label: Music
     folder: src/music
     summary: "{{artist}} - {{title}}"
+    slug: "{{artist}}-{{slug}}"
     create: true
     delete: true
     fields:
@@ -19,4 +18,4 @@ collections:
       - { name: title, label: Title }
       - { name: cover, label: Cover, widget: image }
       - { name: date, label: Date, widget: date }
-      - { name: body, label: Body, widget: markdown }
+      - { name: body, label: Body, widget: markdown, required: false }
