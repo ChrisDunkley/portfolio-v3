@@ -2,16 +2,21 @@ backend:
   name: github
   repo: ChrisDunkley/portfolio-v3
 
+publish_mode: editorial_workflow
+
 media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: music
+    label: Music
+    folder: src/music
+    summary: "{{artist}} - {{title}}"
     create: true
+    delete: true
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
+      - { name: artist, label: Artist }
       - { name: title, label: Title }
+      - { name: cover, label: Cover, widget: image }
+      - { name: date, label: Date, widget: date }
       - { name: body, label: Body, widget: markdown }
