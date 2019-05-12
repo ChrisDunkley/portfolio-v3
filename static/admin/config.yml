@@ -19,3 +19,30 @@ collections:
       - { name: cover, label: Cover, widget: image }
       - { name: date, label: Date, widget: date }
       - { name: body, label: Body, widget: markdown, required: false }
+  - name: blog
+    label: Blog
+    folder: src/blog
+    create: true
+    delete: true
+    fields:
+      - { name: date, label: Date, widget: date }
+      - { name: title, label: Title }
+      - { name: body, label: Body, widget: markdown }
+  - name: work
+    label: Project
+    folder: src/work
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    fields:
+      - { name: title, label: Title }
+      - { name: slug, label: Slug, widget: string }
+      - { name: author, label: Author, default: "Chris Dunkley" }
+      - { name: date, label: Date, widget: date }
+      - { name: thumb, label: Thumbnail }
+      - { name: images,
+          label: Images,
+          widget: list,
+          field: {label: image, name: Image, widget: text}
+        }
+      - { name: body, label: Body, widget: markdown }

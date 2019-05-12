@@ -15,5 +15,3 @@ A series of banners created for blog posts about educational software.
 This project gave me a good opportunity to experiment with a variety of colours and styles.
 
 <a class="big-button" href="https://www.behance.net/gallery/62622005/Banner-Collection">See the full project on Behance</a>
-
-</div>
