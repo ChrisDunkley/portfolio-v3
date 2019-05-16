@@ -2,7 +2,7 @@
 
 My portfolio website, rebuilt with Gatsby.
 
-## 🚀 Quick start
+## 🚀 Some info about Gatsby
 
 1.  **Start developing.**
 
