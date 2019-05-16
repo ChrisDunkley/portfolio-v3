@@ -4,7 +4,7 @@ const Footer = ({ siteTitle }) => (
 	<footer>
 		© {new Date().getFullYear()} Chris Dunkley, unless otherwise stated.
 		{` `}
-		<a href="https://www.gatsbyjs.org">Back to top.</a>
+		<a href="#top">Back to top.</a>
 	</footer>
 )
 

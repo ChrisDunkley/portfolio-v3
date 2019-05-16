@@ -7,7 +7,7 @@ import logo from '../images/logo.svg'
 import css from './header.module.scss'
 
 const Header = ({ siteTitle }) => (
-	<header>
+	<header id="top">
 		<div className={css.wrapper}>
 			<Link className={css.logo} to="/"><img alt="Chris Dunkley Logo" src={logo} /></Link>
 
