@@ -17,7 +17,8 @@ collections:
       - { name: artist, label: Artist }
       - { name: title, label: Title }
       - { name: cover, label: Cover, widget: image }
-      - { name: date, label: Date, widget: date }
+      - { name: date, label: Date added, widget: date }
+      - { name: release-year, label: Year of release }
       - { name: body, label: Body, widget: markdown, required: false }
   - name: blog
     label: Blog
