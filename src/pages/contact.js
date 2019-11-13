@@ -19,7 +19,7 @@ export default () => (
 
 			<div className={css.further}>
 				<h2>You can email me at -</h2>
-				<p><a href="mailto:contact@chrisdunkley.net">contact at chris dunkley dot net</a></p>
+				<p><a href="mailto:chris.j.dunkley@gmail.com">chris.j.dunkley@gmail.com</a></p>
 
 				<h2>Or contact me online at -</h2>
 				<p>
