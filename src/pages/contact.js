@@ -2,11 +2,14 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
+import SEO from '../components/seo'
+
 import css from "./contact.module.scss"
 
 
 export default () => (
 	<Layout>
+		<SEO title="Contact" keywords={[`design`, `portfolio`, `chris dunkley`]} />
 
 		<div className={css.info}>
 			<div className={css.description}>

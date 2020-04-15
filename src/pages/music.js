@@ -11,7 +11,7 @@ import css from './music.module.scss'
  
 const Index = ({ data }) => (
 	<Layout>
-		<SEO title="Music Recommendations" keywords={[`gatsby`, `application`, `react`]} />
+		<SEO title="Music Recommendations" keywords={[`music`, `recommendations`, `albums`]} />
 		
 		<div className={css.wrapper}>
 

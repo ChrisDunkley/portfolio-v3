@@ -11,7 +11,7 @@ import css from './index.module.scss'
  
 const Index = ({ data }) => (
 	<Layout>
-		<SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+		<SEO title="Home" keywords={[`design`, `portfolio`, `chris dunkley`]} />
 		
 		<div className={css.wrapper}>
 			

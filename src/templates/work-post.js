@@ -4,6 +4,8 @@ import Layout from "../components/layout"
 
 import Img from 'gatsby-image'
 
+import SEO from '../components/seo'
+
 import css from './work-post.module.scss'
 
 
@@ -11,6 +13,7 @@ export default ({ data }) => {
 	const post = data.markdownRemark
 	return (
 		<Layout>
+			<SEO title={post.frontmatter.title} keywords={[`work`, `portfolio`, `design`]} />
 
 			<div className={css.wrapper}>
 

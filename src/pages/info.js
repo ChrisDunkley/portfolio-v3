@@ -11,7 +11,7 @@ import css from './info.module.scss'
 
 const Page = () => (
 	<Layout>
-		<SEO title="Info" keywords={[`gatsby`, `application`, `react`]} />
+		<SEO title="Info" keywords={[`description`, `information`]} />
 
 		<div className={css.info}>
 			<div className={css.description}>
