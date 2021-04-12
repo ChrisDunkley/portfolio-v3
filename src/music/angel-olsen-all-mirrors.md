@@ -1,0 +1,8 @@
+---
+artist: Angel Olsen
+title: All Mirrors
+cover: /assets/album_angelolsen-all-mirrors.jpg
+date: 2021-03-01T05:25:45.122Z
+release-year: '2019'
+---
+
