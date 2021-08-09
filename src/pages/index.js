@@ -1,32 +1,31 @@
 import React from 'react'
 
-import { Link, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-import Img from 'gatsby-image'
-
 import css from './index.module.scss'
+
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+import box01 from "../work/images/banners/thumb.jpg"
+import box02 from "../work/images/wedding-invite/thumb.jpg"
+import box03 from "../work/images/presentation/thumb.jpg"
+import box04 from "../work/images/support-portal/thumb.jpg"
+
  
 const Index = ({ data }) => (
 	<Layout>
-		<SEO title="Home" keywords={[`design`, `portfolio`, `chris dunkley`]} />
+		<SEO title=" " keywords={[`design`, `portfolio`, `chris dunkley`]} />
 		
 		<div className={css.wrapper}>
+
+				<Link to="work/banners" className={css.box01} style={{ backgroundImage: `url(${box01})` }}>rty</Link>
+				<Link to="work/invite" className={css.box02} style={{ backgroundImage: `url(${box02})` }}>vbn</Link>
+				<Link to="work/presentation" className={css.box03} style={{ backgroundImage: `url(${box03})` }}>cvb</Link>
+				<Link to="work/support-portal" className={css.box04} style={{ backgroundImage: `url(${box04})` }}>zxc</Link>
 			
-			{data.allMarkdownRemark.edges.map(({ node }) => (
-				<div className={css.item} key={node.id}>
-
-					<Link to={node.fields.slug} >
-
-						<Img fluid={node.frontmatter.thumb.childImageSharp.fluid} />
-
-						<h3 className={css.title}>{node.frontmatter.title}</h3>
-					</Link>
-					
-				</div>
-			))}
 		</div>
 
 	</Layout>
@@ -34,33 +33,3 @@ const Index = ({ data }) => (
 
 export default Index
 
-export const query = graphql`
-	query {
-		allMarkdownRemark(
-			filter: { fields:  { slug: { regex:"/work/"}}},
-			sort: { fields: [frontmatter___date], order: DESC }
-			) {
-			totalCount
-			edges {
-				node {
-					id
-					frontmatter {
-						title
-						date(formatString: "DD MMMM, YYYY")
-						author
-						thumb {
-						  childImageSharp {
-						    fluid(maxWidth: 800) {
-						      ...GatsbyImageSharpFluid
-						    }
-						  }
-						}
-					}
-					fields {
-						slug
-					}
-				}
-			}
-		}
-	}
-`

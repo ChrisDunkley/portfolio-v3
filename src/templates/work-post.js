@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import SEO from '../components/seo'
 
@@ -12,14 +12,15 @@ import css from './work-post.module.scss'
 export default ({ data }) => {
 	const post = data.markdownRemark
 	return (
-		<Layout>
-			<SEO title={post.frontmatter.title} keywords={[`work`, `portfolio`, `design`]} />
+        <Layout>
+			<SEO title={`${post.frontmatter.title} -`} keywords={[`work`, `portfolio`, `design`]} />
 
 			<div className={css.wrapper}>
 
-				{post.frontmatter.images.map(({ childImageSharp }) => (
+				{post.frontmatter.images.map(({ image }) => (
 					<div>
-						<Img className={css.heroImage} fluid={childImageSharp.fluid} />
+						<p>{image}</p>
+						{/* <GatsbyImage image={image.fluid} className={css.heroImage} /> */}
 					</div>
 				))}
 
@@ -34,23 +35,20 @@ export default ({ data }) => {
 			</div>
 
 		</Layout>
-	)
+    );
 }
 
-export const query = graphql`
-	query($slug: String!) {
-		markdownRemark(fields: { slug: { eq: $slug } }) {
-			html
-			frontmatter {
-				title
-				images {
-					childImageSharp {
-						fluid(maxWidth: 2800) {
-							...GatsbyImageSharpFluid
-						}
-					}
-				}
+export const query = graphql`query ($slug: String!) {
+	markdownRemark(fields: {slug: {eq: $slug}}) {
+   	html
+    	frontmatter {
+      	title
+			images {
+				childImageSharp {
+					gatsbyImageData(width: 200)
+				 }
 			}
-		}
-	}
+    	}
+  	}
+}
 `

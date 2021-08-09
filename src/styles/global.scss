@@ -40,10 +40,6 @@ p.space {
 	margin-top: 1em;
 }
 
-header {
-	border-bottom: 1px solid $rule-color;
-}
-
 footer {
 	text-align: center;
 	font-size: 0.8em;
@@ -51,12 +47,11 @@ footer {
 	padding: 2em;
 	padding-bottom: 3em;
 	color: $footer-color;
-	border-top: 1px solid $rule-color;
 }
 
 article {
 	width: 100%;
-	max-width: $max-width;
+	max-width: 1280px;
 	margin: 0 auto;
 }
 

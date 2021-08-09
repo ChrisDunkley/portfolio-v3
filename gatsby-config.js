@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Chris Dunkley`,
-    description: `Portfolio of Chris Dunkley, graphic and multimedia designer`,
+    description: `Chris Dunkley, graphic and multimedia designer`,
     author: `@chrisdunkley`,
   },
   plugins: [

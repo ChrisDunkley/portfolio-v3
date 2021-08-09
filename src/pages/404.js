@@ -7,7 +7,7 @@ import css from "./404.module.scss"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404 - Not found" />
+    <SEO title="404 - " />
 
     <div className={css.wrapper}>
     	<h2>404</h2>
