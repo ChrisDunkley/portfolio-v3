@@ -2,14 +2,14 @@ import React from 'react'
 
 import Layout from '../components/layout'
 
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 
-import css from "./contact.module.scss"
+import * as css from "./contact.module.scss"
 
 
-export default () => (
+const Contact = () => (
 	<Layout>
-		<SEO title="Contact -" keywords={[`design`, `portfolio`, `chris dunkley`]} />
+		<Seo title="Contact -" keywords={[`design`, `portfolio`, `chris dunkley`]} />
 
 		<div className={css.info}>
 			<div className={css.description}>
@@ -33,3 +33,5 @@ export default () => (
 
 	</Layout>
 )
+
+export default Contact

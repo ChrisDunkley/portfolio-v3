@@ -4,7 +4,7 @@ import React from 'react'
 
 import logo from '../images/logo.svg'
 
-import css from './header.module.scss'
+import * as css from './header.module.scss'
 
 const Header = ({ siteTitle }) => (
 	<header id="top">

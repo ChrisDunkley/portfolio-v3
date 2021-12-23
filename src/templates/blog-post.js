@@ -2,23 +2,25 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 
-export default ({ data }) => {
-  const post = data.markdownRemark
+const BlogPost = ({ data }) => {
+  let post = data.markdownRemark;
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} keywords={[`blog`]} />
+      <Seo title={post.frontmatter.title} keywords={[`blog`]} />
       <div>
         <h2>{post.frontmatter.title}</h2>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
-  )
+  );
 }
 
-export const query = graphql`
-  query($slug: String!) {
+export default BlogPost;
+
+export const pageQuery = graphql`
+  query BlogPostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       frontmatter {

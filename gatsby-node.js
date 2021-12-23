@@ -4,12 +4,12 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const workPost = path.resolve('./src/templates/work-post.js');
 const blogPost = path.resolve('./src/templates/blog-post.js');
 
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+//const { fmImagesToRelative } = require('gatsby-remark-relative-images');
  
 exports.onCreateNode = ({ node, getNode, actions }) => {
 
 	// Check for links to static images and convert path to relative (using gatsby-remark-relative-images plugin)
-	fmImagesToRelative(node);
+	//fmImagesToRelative(node);
 
 	const { createNodeField } = actions
 	if (node.internal.type === `MarkdownRemark`) {

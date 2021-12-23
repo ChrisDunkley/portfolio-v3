@@ -3,15 +3,15 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 
 import portrait from '../images/portrait.jpg'
 
-import css from './info.module.scss'
+import * as css from './info.module.scss'
 
 const Page = () => (
 	<Layout>
-		<SEO title="Info -" keywords={[`description`, `information`]} />
+		<Seo title="Info -" keywords={[`description`, `information`]} />
 
 		<div className={css.info}>
 			<div className={css.description}>
