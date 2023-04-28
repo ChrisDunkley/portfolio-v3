@@ -1,0 +1,9 @@
+@import '../styles/variables';
+
+.wrapper {
+    padding: 0 $default-padding*2;
+    max-width: $max-width;
+    margin: 0 auto;
+    // background-color: red;
+
+}

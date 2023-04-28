@@ -8,30 +8,32 @@ html {
 	background-color: $bg-color;
 }
 
+strong {
+	font-weight: 600;
+}
+
 body {
-	font-family: "europa", Arial, Helvetica, sans-serif;
+	// font-family: "europa", Arial, Helvetica, sans-serif;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
 	margin: 0;
 	min-height: 100vh;
 }
 
 a:link, a:visited {
-	color: $link-color;
-	text-decoration: none;
+	text-decoration: underline;
+	color: $body-color;
+	text-decoration-color: $link-color;
 }
 
 a:hover {
 	color: $link-hover;
-	text-decoration: underline;
-}
-
-h1 {
-	font-size: 120%;
-	margin: 0;
+	text-decoration: none;
 }
 
 h2 {
-	color: $heading-color;
-	font-weight: 700;
+	
+	font-weight: 600;
 	font-size: 120%;
 	margin: 1em 0;
 }
@@ -42,16 +44,22 @@ p.space {
 
 footer {
 	text-align: center;
-	font-size: 0.8em;
-	margin-top: 3em;
-	padding: 2em;
-	padding-bottom: 3em;
+	padding: $default-padding;
 	color: $footer-color;
+
+	p {
+		font-size: 0.8em;
+	}
+}
+
+.footer-logo {
+	margin: 0 auto;
+	max-width: 70px;
 }
 
 article {
 	width: 100%;
-	max-width: 1280px;
+	//max-width: $max-width;
 	margin: 0 auto;
 }
 

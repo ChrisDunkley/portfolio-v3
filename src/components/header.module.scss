@@ -4,17 +4,34 @@
 .wrapper {
 	display: flex;
 	margin: 0 auto;
-	max-width: 1280px;
+	max-width: $max-width;
 	padding: $default-padding;
 }
 
 .logo {
-	max-width: 100px;
-	flex: 0 0 100px;
-	align-items: baseline;
-	align-content: flex-end;
-	text-align: right;
-	justify-content: flex-end;
+	align-items: center;
+	justify-content: flex-start;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-content: flex-start;
+	text-decoration: none !important;
+
+	&:hover {
+		text-decoration: underline !important;
+	}
+
+	h1 {
+		font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
+		font-size: 130%;
+		line-height: 1em;
+		text-transform: uppercase;
+		color: black;
+		text-align: left;
+		margin: 0;
+		padding-left: 12px;
+		font-weight: 700;
+	}
 
 	img {
 		max-width: 100px;
@@ -29,55 +46,67 @@
 
 	display: flex;
 	flex-direction: column;
-	
+
 	justify-content: flex-end;
 	align-items: flex-end;
 
 	li {
 		display: inline-block;
+		position: relative;
 		margin-left: 0;
 
-			a:link, 
-			a:visited {
-				color: $menu-color;
-				text-decoration: none;
-				display:block;
-			}
+		a:link,
+		a:visited {
+			color: $menu-color;
+			text-decoration: none;
+			display: block;
+			font-size: 110%;
+			font-weight: 500;
+		}
 
-			a:hover {
-				color: $menu-hover;
-				text-decoration: underline;
-			}
+		a:hover {
+			color: $menu-hover;
+			text-decoration: underline;
+		}
 	}
+
+
 
 }
 
 
 @media only screen and (min-width: $screen-small) {
-	h1 {
-		font-size: 130%;
-	}
-
-	.nav {
-
-		li {
-			margin-left: 1.5em;
-		}
+	.wrapper {
+		padding: $default-padding*2;
 	}
 }
 
+
 @media only screen and (min-width: $screen-medium) {
 
-	h1 {
-		font-size: 140%;
-	}
-
 	.nav {
-		margin-top: 1em;
+		margin-top: 1.55em;
 		flex-direction: row;
 		align-items: baseline;
 
-		
+		li {
+			padding-left: 1.5em;
+		}
+
+		li:not(:last-child) {
+			padding-right: 1.8em;
+
+			&:after {
+				content: ">";
+				width: 20px;
+				height: 20px;
+				color: gray;
+
+				display: block;
+				position: absolute;
+				top: 2px;
+				right: 0;
+			}
+		}
 	}
-	
 }

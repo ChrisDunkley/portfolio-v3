@@ -1,7 +1,12 @@
 @import '../styles/variables';
 
 .wrapper {
-	padding: 1.5em;
+	padding: 0 $default-padding;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: $max-width;
+	margin: 0 auto;
 }
 
 .pageTitle {
@@ -12,36 +17,37 @@
 }
 
 .album {
+	flex: 0 1 50%;
 	display: flex;
 	align-items: center;
 	margin: 0 auto;
 	flex-direction: column;
-	text-align: center;
-	margin-bottom: 2em;
+	margin-bottom: 1em;
+	padding: 0.5em;
 }
-
 
 .cover {
 	flex: 0 1 200px;
-	min-width:200px;
+	min-width: 200px;
 	margin: 0;
 	border: 1px solid $light-color;
 }
 
 .information {
-	width: 100%;
+	margin-top: 0.5em;
+	width: 300px;
 }
 
 .artist {
 	margin: 1em 0 0.5em 0;
 	padding: 0;
 	font-weight: 300;
+	font-size: 90%;
 }
 
 .title {
-	margin: 0 0 1em 0;
+	margin: 0 0 0.5em 0;
 	font-style: oblique;
-	font-size: 130%;
 }
 
 .comments {
@@ -51,7 +57,7 @@
 
 .date {
 	text-transform: uppercase;
-	font-size: 75%;
+	font-size: 60%;
 	color: #aaa;
 	margin-bottom: 0;
 }
@@ -61,25 +67,31 @@
 	.wrapper {
 		flex-direction: row;
 	}
+	
+	.album {
+		flex: 0 1 33.33%;
+		flex-direction: column;
+		text-align: left;
+		margin-bottom: 1em;
+		font-size: 90%;
+	}
+
+	.information {
+		width: 100%;
+	}
 
 	.artist {
 		margin-top: 0;
 	}
-
-	
-	.album {
-		flex-direction: row;
-		text-align: left;
-		margin-bottom: 1em;
-	}
-
-	.information {
-		margin-left: 1.5em;
-		
-	}
 }
 
 @media only screen and (min-width: $screen-large) {
+
+	.album {
+		flex: 0 1 25%;
+		padding: 1em;
+		font-size: 100%;
+	}
 
 	.comments {
 		max-width: 80%;

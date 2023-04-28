@@ -1,4 +1,4 @@
-$bg-color: #fff;
+$bg-color: #f6f6f6;
 
 $body-color: #272626;
 
@@ -7,24 +7,25 @@ $title-color: #0E0E0D;
 $heading-color: #161815;
 
 $menu-color: #252627;
-$menu-hover: #1753ad;
+$menu-hover: #90a92f; //#1753ad;
 
-$link-color: #1753ad;
-$link-hover: #2A89E6;
+$link-color: #637030; //#1753ad;
+$link-hover: #7f9139;
 
 $thumb-summary: #A6A29E;
 $thumb-hover: #80B3E6;
 
-$footer-color: #494A4A;
+$footer-bg: #ceaf65;
+$footer-color: #2c2c2c;
 
 $rule-color: #e8e8e8;
 
 $light-color: #e8e8e8;
 
-$default-padding: 1.5em;
+$default-padding: 2em;
 
-$screen-small: 460px;
-$screen-medium: 720px;
-$screen-large: 920px;
+$screen-small: 768px;
+$screen-medium: 1080px;
+$screen-large: 1280px;
 
-$max-width: 1280px;
+$max-width: 1600px;
