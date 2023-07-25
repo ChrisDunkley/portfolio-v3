@@ -76,7 +76,7 @@ const Index = () => (
 
 
 
-			<div className={css.box}>
+			{/* <div className={css.box}>
 
 				<Link to="learning-design" style={{ backgroundColor: "#494954" }}>
 					<StaticImage
@@ -91,7 +91,7 @@ const Index = () => (
 						<p className={css.tags}>various templates and layouts</p>
 					</div>
 				</Link>
-			</div>
+			</div> */}
 
 			<div className={css.box}>
 				<Link to="banners" style={{ backgroundColor: "#ef6a54" }}>
@@ -129,6 +129,10 @@ const Index = () => (
 						<p className={css.tags}>graphic design, instructional design</p>
 					</div>
 				</Link>
+			</div>
+
+			<div className={css.box} style={{ backgroundColor: "rgb(226 224 224)", borderRadius: "8px" }}>
+
 			</div>
 
 
