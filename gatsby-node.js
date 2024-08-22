@@ -1,51 +1,43 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const path = require("path");
 
-const workPost = path.resolve('./src/templates/work-post.js');
-const blogPost = path.resolve('./src/templates/blog-post.js');
+exports.createPages = async ({ graphql, actions, reporter }) => {
 
- 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+	// Destructure the createPage function from the actions object
+	const { createPage } = actions;
 
-	const { createNodeField } = actions
-	if (node.internal.type === `MarkdownRemark`) {
-		const slug = createFilePath({ node, getNode, basePath: `pages` })
-		createNodeField({
-			node,
-			name: `slug`,
-			value: slug,
-		})
+	const result = await graphql(`
+        query BLOG_POSTS {
+            allMdx(filter: {frontmatter: {path: {ne: null}}}) {
+                edges {
+                    node {
+                        id
+                        frontmatter {
+                          path
+                        }
+                    }
+                }
+            }
+        }
+    `);
+
+	if (result.errors) {
+		reporter.panicOnBuild("🚨  ERROR: Loading \"createPages\" query");
 	}
-}
 
-exports.createPages = ({ graphql, actions }) => {
-	const { createPage } = actions
-	return graphql(`
-		{
-			allMarkdownRemark {
-				edges {
-					node {
-						fields {
-							slug
-						}
-					}
-				}
-			}
-		}
-	`).then(result => {
-		result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+	// Create blog post pages.
+	const posts = result.data.allMdx.edges;
 
-			if(node.fields.slug.indexOf("/blog/") != -1) {
-				createPage({
-					path: node.fields.slug,
-					component: blogPost,
-					context: {
-						// Data passed to context is available
-						// in page queries as GraphQL variables.
-						slug: node.fields.slug,
-					},
-				})
-			}
-		})
-	})
-}
+	// you'll call `createPage` for each result
+	posts.forEach(({ node }, index) => {
+		createPage({
+			// This component will wrap our MDX content
+			component: path.resolve("./src/templates/blog-post.js"),
+			// Pass any value you want to access inside the template. They'll be available via `props`.
+			context: {
+				id: node.id
+			},
+			// Slug defined with frontmatter in each MDX file.
+			path: "blog/" + node.frontmatter.path
+		});
+	});
+};

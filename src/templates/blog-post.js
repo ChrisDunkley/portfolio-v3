@@ -4,32 +4,26 @@ import Layout from "../components/layout"
 
 import * as css from './blog-post.module.scss'
 
-import Seo from '../components/seo'
-
-const BlogPost = ({ data }) => {
-  let post = data.markdownRemark;
+export default function BlogPostTemplate({ data }) {
+  const post = data.mdx
   return (
     <Layout>
-      <Seo title={post.frontmatter.title} keywords={[`blog`]} />
-      <div>
-        <div class={css.wrapper}>
-          <h2>{post.frontmatter.title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
+      <div className={css.wrapper}>
+        <h2>{post.frontmatter.title}</h2>
+        <div dangerouslySetInnerHTML={{ __html: post.body }} />
       </div>
     </Layout>
-  );
+  )
 }
 
-export default BlogPost;
-
-export const pageQuery = graphql`
-  query BlogPostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-      }
+export const query = graphql`
+    query BlogPostQuery($id: String) {
+        mdx(id: { eq: $id }) {
+            id
+            body
+            frontmatter {
+                title
+            }
+        }
     }
-  }
 `

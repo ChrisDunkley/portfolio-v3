@@ -1,15 +1,17 @@
 import React from "react"
 import Layout from "../../components/layout"
 
+import { SEO } from "../../components/seo"
+
 import { StaticImage } from "gatsby-plugin-image"
 
-import Seo from '../../components/seo'
+
 
 import * as css from '../work.module.scss'
 
 const WorkPost = () => (
     <Layout>
-        <Seo title="Blue Dust -" keywords={[`graphic design`, `audio book`, `chris dunkley`]} />
+
 
         <div className={css.wrapper}>
 
@@ -82,7 +84,7 @@ const WorkPost = () => (
                     layout="fullWidth"
                     className={css.half}
                 />
-                <p class={css.imageInfo}>Early logo explorations</p>
+                <p className={css.imageInfo}>Early logo explorations</p>
             </div>
 
 
@@ -94,7 +96,7 @@ const WorkPost = () => (
                     layout="fullWidth"
                     className={css.full}
                 />
-                <p class={css.imageInfo}>Final detail</p>
+                <p className={css.imageInfo}>Final detail</p>
             </div>
 
 
@@ -106,7 +108,7 @@ const WorkPost = () => (
                     layout="fullWidth"
                     className={css.full}
                 />
-                <p class={css.imageInfo}>Alternative layout</p>
+                <p className={css.imageInfo}>Alternative layout</p>
             </div>
 
         </div>
@@ -116,3 +118,7 @@ const WorkPost = () => (
 )
 
 export default WorkPost
+
+export const Head = () => (
+    <SEO title="Blue Dust - Chris Dunkley" />
+)

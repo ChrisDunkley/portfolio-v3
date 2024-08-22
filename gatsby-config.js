@@ -1,89 +1,51 @@
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = {
   siteMetadata: {
     title: `Chris Dunkley`,
-    description: `Chris Dunkley, graphic and multimedia designer`,
-    author: `@chrisdunkley`,
+    siteUrl: `https://www.chrisdunkley.net`,
+    description: `Home of Chris Dunkley, Designer.`,
   },
-  plugins: [
-    {
-      resolve: `gatsby-source-filesystem`,
+  plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": "images",
+      "path": "./src/images/"
+    },
+    __key: "images"
+  }, {
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `assets`,
-        path: `${__dirname}/static/assets/`,
+        "name": "pages",
+        "path": "./src/pages/"
       },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
+      __key: "pages"
+    }, {
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `src`,
-        path: `${__dirname}/src`,
+        "name": "music",
+        "path": "./src/music/"
       },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
+      __key: "music"
+    }, {
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `blog`,
-        path: `${__dirname}/src/blog/`,
+        "name": "blog",
+        "path": "./src/blog/"
       },
-    },
-
-    {
-      resolve: `gatsby-transformer-remark`,
+      __key: "blog"
+    }, {
+      resolve: 'gatsby-source-filesystem',
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-relative-images`,
-            options: {
-              name: "assets"
-            }
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 3840,
-              linkImagesToOriginal: false,
-            },
-          },
-        ],
+        "name": "covers",
+        "path": "./static/assets/"
       },
-    },
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-plugin-sharp`,
+      __key: "covers"
+    }, {
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        defaults: {
-          formats: [`auto`, `webp`],
-          placeholder: `dominantColor`,
-          quality: 100,
-          breakpoints: [750, 1080, 1366, 1920],
-          backgroundColor: `transparent`,
-          tracedSVGOptions: {},
-          blurredOptions: {},
-          jpgOptions: {},
-          pngOptions: {},
-          webpOptions: {},
-          avifOptions: {}
-        }
-      }
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-netlify-cms`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Chris Dunkley Portfolio`,
-        short_name: `ChrisDunkley`,
-        start_url: `/`,
-        background_color: `#fff`,
-        theme_color: `#1753AD`,
-        display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        extensions: [`.md`, `.mdx`],
       },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
-  ],
-}
+    },]
+};

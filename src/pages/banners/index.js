@@ -3,13 +3,13 @@ import Layout from "../../components/layout"
 
 import { StaticImage } from "gatsby-plugin-image"
 
-import Seo from '../../components/seo'
+import { SEO } from "../../components/seo"
 
 import * as css from '../work.module.scss'
 
 const WorkPost = () => (
     <Layout>
-        <Seo title="Blog post banners -" keywords={[`blog`, `banners`, `chris dunkley`]} />
+
 
         <div className={css.wrapper}>
 
@@ -80,3 +80,7 @@ const WorkPost = () => (
 )
 
 export default WorkPost
+
+export const Head = () => (
+    <SEO title="Blog post banners - Chris Dunkley" />
+)

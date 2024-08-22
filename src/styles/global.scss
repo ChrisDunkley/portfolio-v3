@@ -13,14 +13,14 @@ strong {
 }
 
 body {
-	// font-family: "europa", Arial, Helvetica, sans-serif;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
 	margin: 0;
 	min-height: 100vh;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
 	text-decoration: underline;
 	color: $body-color;
 	text-decoration-color: $link-color;
@@ -32,7 +32,7 @@ a:hover {
 }
 
 h2 {
-	
+
 	font-weight: 600;
 	font-size: 120%;
 	margin: 1em 0;
@@ -68,7 +68,7 @@ a.big-button {
 	padding: 0.8em 1em;
 	border-radius: 5px;
 	color: $bg-color;
-	display:inline-block;
+	display: inline-block;
 	width: 100%;
 	text-align: center;
 

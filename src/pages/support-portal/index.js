@@ -3,47 +3,47 @@ import Layout from "../../components/layout"
 
 import { StaticImage } from "gatsby-plugin-image"
 
-import Seo from '../../components/seo'
+import { SEO } from "../../components/seo"
 
 import * as css from '../work.module.scss'
 
 const WorkPost = () => (
-	<Layout>
-        <Seo title="Support portal" keywords={[`design`, `portfolio`, `chris dunkley`]} />
+    <Layout>
+
 
         <div className={css.wrapper}>
 
-            <StaticImage 
+            <StaticImage
                 src="my_login.jpg"
-                alt="" 
+                alt=""
                 placeholder="blurred"
                 layout="fullWidth"
                 className={css.heroImage}
             />
-        
-            <StaticImage 
+
+            <StaticImage
                 src="my_icons.jpg"
-                alt="" 
+                alt=""
                 placeholder="blurred"
                 layout="fullWidth"
                 className={css.heroImage}
             />
 
-            <StaticImage 
+            <StaticImage
                 src="my_screen.jpg"
-                alt="" 
+                alt=""
                 placeholder="blurred"
                 layout="fullWidth"
                 className={css.heroImage}
             />
-            
 
-            
+
+
 
             <div className={css.info}>
 
                 <div className={css.headings}>
-                    <h2 className={css.title}>Support Portal</h2>
+                    <h2 className={css.title}>Support portal</h2>
                 </div>
 
                 <div className={css.description}>
@@ -59,10 +59,14 @@ const WorkPost = () => (
                 </div>
 
             </div>
-            
+
         </div>
 
     </Layout>
 )
 
 export default WorkPost
+
+export const Head = () => (
+    <SEO title="Support portal - Chris Dunkley" />
+)

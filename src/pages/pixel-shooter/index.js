@@ -1,17 +1,17 @@
 import React from "react"
 import Layout from "../../components/layout"
 
-import { StaticImage } from "gatsby-plugin-image"
+import { SEO } from "../../components/seo"
 
-import Seo from '../../components/seo'
+import { StaticImage } from "gatsby-plugin-image"
 
 import * as css from '../work.module.scss'
 
 import ShipLoop from './ship-loop.gif'
 
 const WorkPost = () => (
-    <Layout>
-        <Seo title="Pixel shooter - " keywords={[`video game`, `pixel art`, `chris dunkley`]} />
+    <Layout pageTitle="Pixel Shooter">
+
 
         <div className={css.wrapper}>
 
@@ -78,3 +78,7 @@ const WorkPost = () => (
 )
 
 export default WorkPost
+
+export const Head = () => (
+    <SEO title="Pixel shooter - Chris Dunkley" />
+)
