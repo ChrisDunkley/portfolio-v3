@@ -5,6 +5,6 @@ path: hi-there
 ---
 This is here incase I one day want to use it. 
 
-Nothing to see for now.
+Nothing to see for now!
 
 XOXO
