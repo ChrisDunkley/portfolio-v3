@@ -1,11 +1,12 @@
-@import 'variables';
+@use 'vars';
 
 * {
 	box-sizing: border-box;
 }
 
 html {
-	background-color: $bg-color;
+	// background-size: 12px 12px;
+	// background-image: repeating-linear-gradient(45deg, #e7e3df 0, #e7e3df 1px, $bg-color 0, $bg-color 50%);
 }
 
 strong {
@@ -13,26 +14,47 @@ strong {
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', Arial, Helvetica, sans-serif;
 	font-weight: 400;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	min-height: 100vh;
+	background-color: vars.$bg-color;
 }
 
 a:link,
 a:visited {
 	text-decoration: underline;
-	color: $body-color;
-	text-decoration-color: $link-color;
+	color: vars.$body-color;
+	text-decoration-color: vars.$link-color;
+	transition: color 0.5s;
 }
 
 a:hover {
-	color: $link-hover;
+	color: vars.$link-hover;
 	text-decoration: none;
 }
 
-h2 {
+.bigLink:link,
+.bigLink:visited {
+	background-color: rgb(33, 73, 58);
+	color: vars.$bg-color;
+	border-radius: 5px;
+	padding: 1em 1.5em;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 105%;
+	font-weight: 600;
+}
 
+.bigLink:hover {
+	background-color: rgb(50, 104, 84);
+	color: vars.$bg-color;
+}
+
+h2 {
 	font-weight: 600;
 	font-size: 120%;
 	margin: 1em 0;
@@ -44,17 +66,18 @@ p.space {
 
 footer {
 	text-align: center;
-	padding: $default-padding;
-	color: $footer-color;
+	padding: vars.$default-padding;
+	color: vars.$footer-color;
+	background-color: vars.$body-color;
 
 	p {
-		font-size: 0.8em;
+		font-size: 80%;
 	}
 }
 
 .footer-logo {
 	margin: 0 auto;
-	max-width: 70px;
+	max-width: 120px;
 }
 
 article {
@@ -64,25 +87,25 @@ article {
 }
 
 a.big-button {
-	background-color: $link-color;
+	background-color: vars.$link-color;
 	padding: 0.8em 1em;
 	border-radius: 5px;
-	color: $bg-color;
+	color: vars.$bg-color;
 	display: inline-block;
 	width: 100%;
 	text-align: center;
 
 	&:visited {
-		color: $bg-color;
+		color: vars.$bg-color;
 	}
 
 	&:hover {
-		background-color: $link-hover;
-		color: $bg-color;
+		background-color: vars.$link-hover;
+		color: vars.$bg-color;
 	}
 }
 
-@media only screen and (min-width: $screen-small) {
+@media only screen and (min-width: vars.$screen-small) {
 
 	a.big-button {
 		width: auto;

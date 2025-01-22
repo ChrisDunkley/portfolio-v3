@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 				id: node.id
 			},
 			// Slug defined with frontmatter in each MDX file.
-			path: "blog/" + node.frontmatter.path
+			path: "notes/" + node.frontmatter.path
 		});
 	});
 };

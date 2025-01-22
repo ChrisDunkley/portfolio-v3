@@ -5,15 +5,17 @@ import { SEO } from "../../components/seo"
 
 import { StaticImage } from "gatsby-plugin-image"
 
-
+import Header from '../../components/header'
 
 import * as css from '../work.module.scss'
+import './blue-dust.module.scss'
 
 const WorkPost = () => (
     <Layout>
 
+        <Header />
 
-        <div className={css.wrapper}>
+        <article className={css.wrapper}>
 
             <StaticImage
                 src="complete_big.jpg"
@@ -48,70 +50,72 @@ const WorkPost = () => (
 
             </div>
 
-        </div>
 
 
 
-        <div className={css.row} style={{ paddingTop: '0' }}>
 
-            <div className={css.third}>
-                <StaticImage
-                    src="logo_01.png"
-                    alt=""
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    className={css.half}
-                />
-                <StaticImage
-                    src="logo_02.png"
-                    alt=""
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    className={css.half}
-                />
+            <div className={css.row} style={{ paddingTop: '0' }}>
 
-                <StaticImage
-                    src="logo_03.png"
-                    alt=""
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    className={css.half}
-                />
-                <StaticImage
-                    src="logo_04.jpg"
-                    alt=""
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    className={css.half}
-                />
-                <p className={css.imageInfo}>Early logo explorations</p>
+                <div className={css.third}>
+                    <StaticImage
+                        src="logo_01.png"
+                        alt=""
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className={css.half}
+                    />
+                    <StaticImage
+                        src="logo_02.png"
+                        alt=""
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className={css.half}
+                    />
+
+                    <StaticImage
+                        src="logo_03.png"
+                        alt=""
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className={css.half}
+                    />
+                    <StaticImage
+                        src="logo_04.jpg"
+                        alt=""
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className={css.half}
+                    />
+                    <p className={css.imageInfo}>Early logo explorations</p>
+                </div>
+
+
+                <div className={css.third}>
+                    <StaticImage
+                        src="subsection.png"
+                        alt=""
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className={css.full}
+                    />
+                    <p className={css.imageInfo}>Final detail</p>
+                </div>
+
+
+                <div className={css.third}>
+                    <StaticImage
+                        src="logo_alt.jpg"
+                        alt=""
+                        placeholder="blurred"
+                        layout="fullWidth"
+                        className={css.full}
+                    />
+                    <p className={css.imageInfo}>Alternative layout</p>
+                </div>
+
             </div>
 
-
-            <div className={css.third}>
-                <StaticImage
-                    src="subsection.png"
-                    alt=""
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    className={css.full}
-                />
-                <p className={css.imageInfo}>Final detail</p>
-            </div>
-
-
-            <div className={css.third}>
-                <StaticImage
-                    src="logo_alt.jpg"
-                    alt=""
-                    placeholder="blurred"
-                    layout="fullWidth"
-                    className={css.full}
-                />
-                <p className={css.imageInfo}>Alternative layout</p>
-            </div>
-
-        </div>
+        </article>
 
 
     </Layout>

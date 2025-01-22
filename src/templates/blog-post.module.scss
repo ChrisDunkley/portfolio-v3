@@ -1,11 +1,128 @@
-@import '../styles/variables';
+@use '../styles/vars';
 
 
 
 .wrapper {
-    padding: 0 $default-padding*2;
-    max-width: $max-width;
+    padding: 0 vars.$default-padding*2;
+    max-width: vars.$max-width;
     margin: 0 auto;
-    text-align: center;
+    padding: 2em 2em 0 2em;
+}
+
+.note {
+    background-color: white;
+    border-radius: 5px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.noteHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    padding: 2rem 3rem;
+    // border-bottom: 1px solid vars.$bg-color;
+    align-items: baseline;
+
+    .title {
+        font-size: 200%;
+        margin: 0;
+        padding: 0;
+        flex: 0 0 80%;
+
+
+        span {
+            color: #aeaeae;
+        }
+    }
+
+    .date {
+        flex: 0 0 20%;
+        font-size: 140%;
+        font-weight: 100;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+    }
+}
+
+
+.noteBody {
+    padding: 2rem 3rem 4rem 3rem;
+    font-size: 110%;
+
+    p {
+        text-align: justify;
+        line-height: 2.4rem;
+        // margin: 2rem 0;
+    }
+
+    >a:link,
+    >a:visited {
+        border: 1px solid vars.$link-color;
+        width: 100%;
+        font-weight: 500;
+        display: inline-block;
+        padding: 1rem;
+        color: vars.$link-color;
+        border-radius: 5px;
+        position: relative;
+        transition: background-color 0.5s;
+        text-decoration: none;
+
+
+        &::after {
+            content: " →";
+            color: vars.$link-color;
+            position: absolute;
+            right: 1.5rem;
+            // font-size: 120%;
+        }
+    }
+
+    >a:hover {
+        background-color: vars.$link-color;
+        cursor: pointer;
+        color: white;
+
+        &::after {
+            color: white;
+        }
+    }
+
+}
+
+@media only screen and (min-width: vars.$screen-small) {
+
+    .noteHeader {
+        padding: 3rem 5rem;
+
+        .title {
+            font-size: 240%;
+        }
+    }
+
+    .noteBody {
+        padding: 2rem 7rem 5rem 7rem;
+
+    }
+
+}
+
+@media only screen and (min-width: vars.$screen-medium) {
+
+    .noteHeader {
+        padding: 3rem 5rem;
+
+        .title {
+            font-size: 260%;
+        }
+    }
+
+    .noteBody {
+        padding: 3rem 10rem 6rem 10rem;
+        font-size: 130%;
+    }
 
 }

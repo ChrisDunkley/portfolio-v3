@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-
+import Header from '../components/header'
 
 
 import * as css from "./contact.module.scss"
@@ -10,6 +10,7 @@ import * as css from "./contact.module.scss"
 const Contact = () => (
 	<Layout>
 
+		<Header />
 
 		<div className={css.info}>
 			<div className={css.description}>
@@ -19,17 +20,33 @@ const Contact = () => (
 
 			</div>
 
+			<form method="post" data-netlify="true" name="contact">
 
-			<div className={css.further}>
-				<h2>You can email me at —</h2>
-				<p><a href="mailto:chris.j.dunkley@gmail.com">chris.j.dunkley@gmail.com</a></p>
+				<label>
+					Name
+					<input type="text" name="name" id="name" />
+				</label>
+				<label>
+					Email
+					<input type="email" name="email" id="email" />
+				</label>
+				<label>
+					Subject
+					<input type="text" name="subject" id="subject" />
+				</label>
+				<label>
+					Message
+					<textarea name="message" id="message" rows="5" />
+				</label>
+				<button type="submit">Send</button>
+				<input type="reset" value="Clear" />
+			</form>
 
-				<h2>Or contact me online via —</h2>
-				<p>
-					<a href="https://instagram.com/chrisdunkley">Instagram</a>, <a href="https://behance.net/ChrisDunkley">Behance</a>, <a href="https://www.linkedin.com/in/chrisjdunkley/">Linkedin</a>
-				</p>
-			</div>
+
+
 		</div>
+
+
 
 	</Layout>
 )

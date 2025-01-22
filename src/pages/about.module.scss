@@ -1,0 +1,88 @@
+@use '../styles/vars';
+
+.info {
+	max-width: vars.$max-width;
+	padding: vars.$default-padding;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 4fr 1fr;
+
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+
+	.intro {
+		background-color: #9baca0;
+		padding: 1em 2em;
+
+
+	}
+
+	.bio {
+		background-color: #a8bbae;
+		// flex: 1 0 auto;
+		padding: 1em 2em;
+	}
+}
+
+
+
+.portrait {
+	grid-column: 2;
+	aspect-ratio: 1;
+	height: 100%;
+	width: 100%;
+
+	img {
+		aspect-ratio: 1;
+		display: block;
+	}
+}
+
+.socials {
+	flex: 0 0 100%;
+	padding: 2em;
+	border-left: 100px solid #bc955c;
+	background-color: #ddb973;
+}
+
+.notes {
+	max-width: vars.$max-width;
+	margin: 0 auto;
+	padding-top: 0em !important;
+
+	:nth-child(1) {
+		background-color: #767676;
+	}
+
+	:nth-child(2) {
+		background-color: #868585;
+	}
+
+	:nth-child(3) {
+		background-color: #a5a5a5;
+	}
+
+	:nth-child(4) {
+		background-color: #adadad;
+	}
+
+	:nth-child(5) {
+		background-color: #c3c3c3;
+	}
+
+	a:link,
+	a:visited {
+		width: 100%;
+		display: block;
+		padding: 2rem;
+		text-decoration: none;
+		color: white;
+		font-weight: 600;
+		font-size: 140%;
+		// text-transform: uppercase;
+	}
+
+}

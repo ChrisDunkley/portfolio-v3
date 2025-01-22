@@ -5,6 +5,8 @@ import { SEO } from "../../components/seo"
 
 import { StaticImage } from "gatsby-plugin-image"
 
+import Header from '../../components/header'
+
 import * as css from '../work.module.scss'
 
 import ShipLoop from './ship-loop.gif'
@@ -12,11 +14,12 @@ import ShipLoop from './ship-loop.gif'
 const WorkPost = () => (
     <Layout pageTitle="Pixel Shooter">
 
+        <Header />
 
-        <div className={css.wrapper}>
+        <article className={css.wrapper}>
 
             <div style={{ textAlign: "center", backgroundColor: "rgb(5 43 92)", width: "100%", display: "inline-block" }}>
-                <img src={ShipLoop} alt="" style={{ maxWidth: "100%", height: '50vh' }} />
+                <img src={ShipLoop} alt="" style={{ maxWidth: "100%" }} />
             </div>
 
 
@@ -71,7 +74,7 @@ const WorkPost = () => (
 
 
 
-        </div>
+        </article>
 
 
     </Layout>

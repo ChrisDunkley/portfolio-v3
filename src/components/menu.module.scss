@@ -1,0 +1,137 @@
+@use '../styles/vars';
+
+
+.wrapper {
+	max-width: vars.vars.$max-width;
+	display: flex;
+	margin: 0 auto;
+}
+
+.logo {
+	align-items: center;
+	justify-content: flex-start;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	align-content: flex-start;
+	text-decoration: none !important;
+	width: 100px;
+
+	&:hover {
+		text-decoration: underline !important;
+	}
+
+	img {
+		max-width: 100px;
+	}
+}
+
+.nav {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	flex-direction: column;
+	flex-wrap: nowrap;
+
+	h1 {
+		font-family: 'Poppins', Arial, Helvetica, sans-serif;
+		font-size: 120%;
+		// line-height: 1em;
+		// text-transform: uppercase;
+		color: black;
+		text-align: left;
+		margin: 0;
+		font-weight: 600;
+	}
+
+	li {
+		display: inline-block;
+		position: relative;
+		margin-left: 0;
+
+		a:link,
+		a:visited {
+			color: vars.$menu-color;
+			text-decoration: none;
+			display: block;
+			font-size: 110%;
+			font-weight: 500;
+			margin-top: 0.1em;
+		}
+
+		a:hover {
+			color: vars.$menu-hover;
+			text-decoration: underline;
+		}
+	}
+
+
+
+}
+
+
+@media only screen and (min-width: vars.$screen-small) {
+	.wrapper {
+		padding: vars.$default-padding*2;
+	}
+}
+
+
+@media only screen and (min-width: vars.$screen-medium) {
+
+	.nav {
+		//margin-top: 1.55em;
+		flex-direction: column;
+		// align-items: baseline;
+
+	}
+}
+
+
+
+
+.heroWrapper {
+	max-width: vars.$max-width;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+
+
+	@media only screen and (min-width: vars.$screen-small) {
+		flex-direction: column;
+	}
+
+	@media only screen and (min-width: vars.$screen-medium) {
+		flex-direction: row;
+	}
+
+	@media only screen and (min-width: vars.$screen-large) {}
+}
+
+
+
+.menuWrapper {
+	flex: 1 0 33.333%;
+	background-color: #d0eae5;
+	padding: 1.5rem;
+	font-size: 110%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0;
+
+	@media only screen and (min-width: vars.$screen-medium) {
+		flex-direction: column;
+	}
+}
+
+.workWrapper {
+	flex: 1 0 66.666%;
+	display: grid;
+	grid-template-columns: 1fr;
+
+	@media only screen and (min-width: vars.$screen-small) {
+		grid-template-columns: 1fr 1fr;
+	}
+}

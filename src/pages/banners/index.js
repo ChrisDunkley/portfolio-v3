@@ -5,13 +5,17 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import { SEO } from "../../components/seo"
 
+import Header from '../../components/header'
+
 import * as css from '../work.module.scss'
 
 const WorkPost = () => (
     <Layout>
 
+        <Header />
 
-        <div className={css.wrapper}>
+
+        <article className={css.wrapper}>
 
             <StaticImage
                 src="layout_banner_04_extra.png"
@@ -74,7 +78,7 @@ const WorkPost = () => (
 
             </div>
 
-        </div>
+        </article>
 
     </Layout>
 )

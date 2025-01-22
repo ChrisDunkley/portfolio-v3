@@ -1,0 +1,72 @@
+@use '../styles/vars';
+
+.list {
+    flex: 1 0 100%;
+
+    h4 {
+        text-transform: uppercase;
+        font-size: 80%;
+        margin: 1rem 1rem 0;
+    }
+
+    ul {
+        margin: 1rem;
+        padding: 0;
+        border-top: 1px solid #d5d5d5;
+        font-size: 80%;
+
+        .final {
+            text-transform: uppercase;
+            font-size: 80%;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    }
+
+    li {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0.2rem 0;
+        border-bottom: 1px solid #d5d5d5;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+}
+
+.breaker {
+    height: 60px;
+    width: 100%;
+    content: '';
+    display: inline-block;
+    background-size: 12px 12px;
+    background-image: repeating-linear-gradient(45deg, vars.$body-color 0, vars.$body-color 1px, vars.$bg-color 0, vars.$bg-color 50%);
+}
+
+.noteNumber {
+    font-size: 0.6rem;
+    text-transform: 100;
+    color: rgb(174, 174, 174);
+    font-weight: normal;
+}
+
+@media only screen and (min-width: vars.$screen-small) {
+
+    .list {
+        flex: 1 0 40%;
+    }
+
+}
+
+@media only screen and (min-width: vars.$screen-medium) {
+
+    .list {
+        flex: 1 0 100%;
+    }
+
+}

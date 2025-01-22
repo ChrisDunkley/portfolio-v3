@@ -1,52 +1,66 @@
-@import '../styles/variables';
+@use '../styles/vars';
 
 .wrapper {
-	padding: 0 $default-padding;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	max-width: $max-width;
+	padding: 0 vars.$default-padding;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, max-content));
+	max-width: vars.$max-width;
 	margin: 0 auto;
+	gap: 2rem;
 }
 
 .pageTitle {
 	text-transform: uppercase;
-	margin-top: 0;
-	font-size: 150%;
-	flex: 1 0 100%;
+	font-size: 100%;
+	background-color: white;
+	padding: 0 vars.$default-padding;
+	padding: 1em 6em 1em 1em;
+	border-radius: vars.$border-radius;
+	display: inline-block;
+	margin: 0 2rem 2rem 2rem;
+
 }
 
 .album {
-	flex: 0 1 50%;
-	display: flex;
-	align-items: center;
 	margin: 0 auto;
+	background-color: white;
+	width: 100%;
+	border-radius: 0.5em;
+	display: flex;
 	flex-direction: column;
-	margin-bottom: 1em;
-	padding: 0.5em;
-}
-
-.cover {
-	flex: 0 1 200px;
-	min-width: 200px;
-	margin: 0;
-	border: 1px solid $light-color;
+	justify-content: space-between;
 }
 
 .information {
-	margin-top: 0.5em;
-	width: 300px;
+	flex: 1 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.description {
+
+	flex: 1 0 calc(100% - 100px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+	padding: 1em;
 }
 
 .artist {
-	margin: 1em 0 0.5em 0;
+	margin: 0 0 0.5em 0;
 	padding: 0;
 	font-weight: 300;
 	font-size: 90%;
+
+
 }
 
 .title {
-	margin: 0 0 0.5em 0;
+	margin: 0 0 0 0;
 	font-style: oblique;
 }
 
@@ -56,23 +70,26 @@
 }
 
 .date {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
 	text-transform: uppercase;
-	font-size: 60%;
-	color: #aaa;
+	font-size: 100%;
+	color: #bcbcbc;
+	font-weight: bold;
 	margin-bottom: 0;
+	border-left: 1px solid #cccccc;
+	flex: 0 0 100px;
+	min-height: 100px;
 }
 
-@media only screen and (min-width: $screen-medium) {
+@media only screen and (min-width: vars.$screen-small) {}
 
-	.wrapper {
-		flex-direction: row;
-	}
-	
+@media only screen and (min-width: vars.$screen-medium) {
+
 	.album {
-		flex: 0 1 33.33%;
-		flex-direction: column;
 		text-align: left;
-		margin-bottom: 1em;
 		font-size: 90%;
 	}
 
@@ -85,11 +102,9 @@
 	}
 }
 
-@media only screen and (min-width: $screen-large) {
+@media only screen and (min-width: vars.$screen-large) {
 
 	.album {
-		flex: 0 1 25%;
-		padding: 1em;
 		font-size: 100%;
 	}
 

@@ -20,9 +20,9 @@ collections:
       - { name: date, label: Date added, widget: date }
       - { name: release-year, label: Year of release }
       - { name: body, label: Body, widget: markdown, required: false }
-  - name: blog
-    label: Blog
-    folder: src/blog
+  - name: notes
+    label: Notes
+    folder: src/notes
     create: true
     delete: true
     fields:

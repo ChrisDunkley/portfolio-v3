@@ -1,14 +1,19 @@
-@import '../styles/variables';
+@use '../styles/vars';
 
+.header {
+	max-width: vars.$max-width;
+	margin: 0 auto;
+}
 
 .wrapper {
 	display: flex;
 	margin: 0 auto;
-	max-width: $max-width;
-	padding: $default-padding;
+	padding: vars.$default-padding;
+	max-width: vars.$max-width;
 }
 
 .logo {
+	flex: 0 1 auto;
 	align-items: center;
 	justify-content: flex-start;
 	display: flex;
@@ -22,15 +27,15 @@
 	}
 
 	h1 {
-		font-family: 'Comfortaa', Arial, Helvetica, sans-serif;
-		font-size: 130%;
+		font-family: 'Poppins', Arial, Helvetica, sans-serif;
+		font-size: 150%;
 		line-height: 1em;
 		text-transform: uppercase;
 		color: black;
 		text-align: left;
 		margin: 0;
 		padding-left: 12px;
-		font-weight: 700;
+		font-weight: 800;
 	}
 
 	img {
@@ -39,7 +44,7 @@
 }
 
 .nav {
-	flex: 1 1 400px;
+	flex: 1 1 auto;
 	text-align: right;
 	margin: 0;
 	padding: 0;
@@ -57,56 +62,54 @@
 
 		a:link,
 		a:visited {
-			color: $menu-color;
+			color: #000;
 			text-decoration: none;
 			display: block;
-			font-size: 110%;
-			font-weight: 500;
+			font-size: 120%;
+			font-weight: 400;
 		}
 
 		a:hover {
-			color: $menu-hover;
+			color: vars.$menu-hover;
 			text-decoration: underline;
 		}
 	}
 
-
-
 }
 
 
-@media only screen and (min-width: $screen-small) {
+@media only screen and (min-width: vars.$screen-small) {
 	.wrapper {
-		padding: $default-padding*2;
+		// padding: vars.$default-padding*2;
 	}
 }
 
 
-@media only screen and (min-width: $screen-medium) {
+@media only screen and (min-width: vars.$screen-medium) {
 
 	.nav {
-		margin-top: 1.55em;
+		// margin-top: 1.55em;
 		flex-direction: row;
-		align-items: baseline;
+		align-items: center;
+		gap: 2em;
 
-		li {
-			padding-left: 1.5em;
-		}
+		// li {
+		// 	padding-left: 1.5em;
+		// }
 
-		li:not(:last-child) {
-			padding-right: 1.8em;
+		// li:not(:last-child) {
+		// 	padding-right: 1.5em;
 
-			&:after {
-				content: ">";
-				width: 20px;
-				height: 20px;
-				color: gray;
-
-				display: block;
-				position: absolute;
-				top: 2px;
-				right: 0;
-			}
-		}
+		// 	&:after {
+		// 		content: ">";
+		// 		width: 20px;
+		// 		height: 20px;
+		// 		color: #000;
+		// 		display: block;
+		// 		position: absolute;
+		// 		top: 2px;
+		// 		right: 0;
+		// 	}
+		// }
 	}
 }

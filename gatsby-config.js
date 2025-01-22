@@ -31,10 +31,10 @@ module.exports = {
     }, {
       resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "blog",
-        "path": "./src/blog/"
+        "name": "notes",
+        "path": "./src/notes/"
       },
-      __key: "blog"
+      __key: "notes"
     }, {
       resolve: 'gatsby-source-filesystem',
       options: {
